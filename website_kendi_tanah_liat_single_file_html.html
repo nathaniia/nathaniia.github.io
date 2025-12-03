@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kendi Tanah Liat — Solusi Ketahanan Pangan</title>
+    <meta
+      name="description"
+      content="Kendi tanah liat: inovasi sederhana untuk menjaga kesuburan tanah, penyimpanan hasil panen, dan ketahanan pangan rumah tangga."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --accent: #f18bc5; /* warna tanah liat */
+        --muted: #6b6b6b;
+        --bg: #f1ece7;
+        --card: #ffffff;
+        --radius: 12px;
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: var(--bg);
+        color: #111;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      header {
+        background: linear-gradient(
+          180deg,
+          rgba(139, 94, 60, 0.06),
+          transparent
+        );
+        backdrop-filter: blur(2px);
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      /* top nav */
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .brand {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent), #d9a57b);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+      nav li {
+        font-weight: 600;
+      }
+      .cta {
+        background: var(--accent);
+        color: white;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+
+      /* hero */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        align-items: center;
+        padding: 36px 0;
+      }
+      .hero h1 {
+        font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+        margin: 0;
+      }
+      .lead {
+        color: var(--muted);
+        line-height: 1.5;
+        margin-top: 8px;
+      }
+      .hero-grid {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .card {
+        background: var(--card);
+        padding: 18px;
+        border-radius: var(--radius);
+        box-shadow: 0 6px 20px rgba(17, 17, 17, 0.06);
+        flex: 1;
+        min-width: 220px;
+      }
+
+      /* features */
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 20px;
+      }
+      .feature {
+        padding: 18px;
+        border-radius: 12px;
+        background: linear-gradient(
+          180deg,
+          rgba(139, 94, 60, 0.03),
+          transparent
+        );
+      }
+      .feature h3 {
+        margin: 8px 0 0;
+      }
+
+      /* gallery */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 18px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      /* about & benefits */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 28px;
+      }
+      .benefits li {
+        margin-bottom: 10px;
+      }
+
+      /* footer */
+      footer {
+        margin-top: 40px;
+        padding: 28px 0;
+        color: var(--muted);
+      }
+
+      /* responsive */
+      @media (max-width: 900px) {
+        .features {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+        nav ul {
+          display: none;
+        }
+      }
+      @media (max-width: 520px) {
+        .features {
+          grid-template-columns: 1fr;
+        }
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          padding: 18px 0;
+        }
+        .logo {
+          width: 42px;
+          height: 42px;
+        }
+      }
+
+      /* small interactive styles */
+      .btn {
+        display: inline-block;
+        padding: 10px 14px;
+        border-radius: 10px;
+        background: var(--accent);
+        color: white;
+        font-weight: 600;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .shadow-sm {
+        box-shadow: 0 6px 18px rgba(17, 17, 17, 0.05);
+      }
+
+      /* accessible focus */
+      a:focus,
+      button:focus,
+      input:focus {
+        outline: 3px solid rgba(139, 94, 60, 0.18);
+        outline-offset: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="logo">KT</div>
+          <div>
+            <div style="font-weight: 700">Kendi Tanah Liat</div>
+            <small class="muted">Solusi sederhana untuk ketahanan pangan</small>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#manfaat">Manfaat</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </nav>
+        <a class="cta" href="#kontak">Ajukan Sampel</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div
+          style="display: flex; gap: 18px; align-items: center; flex-wrap: wrap"
+        >
+          <div style="flex: 1; min-width: 260px">
+            <h1>
+              Kendi tanah liat — inovasi lokal untuk menjaga pangan keluarga
+            </h1>
+            <p class="lead">
+              Kendi berbahan tanah liat yang dirancang untuk menyimpan,
+              mendinginkan, dan memperpanjang umur hasil panen serta membantu
+              konservasi air dan tanah. Cocok untuk rumah tangga, kebun, dan
+              kelompok tani skala kecil.
+            </p>
+            <p style="margin-top: 12px">
+              <a class="btn" href="#manfaat">Lihat Manfaat</a>
+              <a href="#galeri" style="margin-left: 8px">Lihat Galeri →</a>
+            </p>
+          </div>
+          <div style="min-width: 260px">
+            <div class="card shadow-sm">
+              <h3>Spesifikasi singkat</h3>
+              <ul class="muted" style="padding-left: 18px; margin-top: 8px">
+                <li>Kapasitas: 5 L / 10 L / 20 L</li>
+                <li>Bahan: tanah liat alami, tanpa bahan kimia berbahaya</li>
+                <li>
+                  Fitur: porositas terkontrol, penutup kedap, pegangan ergonomis
+                </li>
+              </ul>
+              <p style="margin-top: 12px">
+                <strong>Harga prototipe:</strong> Rp XX.000 (tergantung harga
+                dari pengrain)
+              </p>
+              <a class="btn" href="#kontak">Minta Sampel</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-grid" aria-hidden="true">
+          <div class="card">
+            <h4>Menjaga Kualitas Pangan</h4>
+            <p class="muted">
+              Porositas tanah liat membantu mengatur kelembapan sehingga makanan
+              kering dan sayuran segar lebih awet.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Ramah Lingkungan</h4>
+            <p class="muted">
+              Terbuat dari bahan lokal dan dapat terurai—mengurangi sampah
+              plastik dan kemasan sekali pakai.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Hemat Energi</h4>
+            <p class="muted">
+              Mengurangi kebutuhan pendinginan mekanis untuk penyimpanan hasil
+              panen kecil-kecilan.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="manfaat" class="features" aria-labelledby="manfaat-title">
+        <h2 id="manfaat-title" style="grid-column: 1/-1">Manfaat Utama</h2>
+        <div class="feature">
+          <h3>Perpanjangan umur simpan</h3>
+          <p class="muted">
+            Memperlambat pembusukan sayuran dan biji-bijian sehingga mengurangi
+            kerugian pasca panen.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Konservasi air</h3>
+          <p class="muted">
+            Kendi dapat menyimpan kelembapan untuk tanaman kecil atau sebagai
+            medium irigasi lambat.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Peningkatan tanah</h3>
+          <p class="muted">
+            Debu dan mikro-partikel tanah liat bisa membantu menambah mineral
+            saat digunakan dalam praktik agroekologi tertentu.
+          </p>
+        </div>
+      </section>
+
+      <section class="two-col" style="align-items: start">
+        <div>
+          <h2 id="about">Tentang Inovasi</h2>
+          <p class="muted">
+            Proyek ini berangkat dari kebutuhan akan solusi rendah biaya untuk
+            penyimpanan hasil panen dan konservasi sumber daya di komunitas
+            pertanian skala kecil. Kendi dibuat menggunakan teknik pembakaran
+            tradisional, kemudian dikembangkan desain untuk mengatur keluaran
+            air dan ventilasi internal.
+          </p>
+          <ul class="benefits muted" style="padding-left: 18px">
+            <li>Mengurangi limbah makanan rumah tangga</li>
+            <li>Mudah diproduksi secara lokal dan scalable</li>
+            <li>Mendukung strategi ketahanan pangan keluarga</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Spesifikasi & Cara Pakai</h2>
+          <ol class="muted" style="padding-left: 18px">
+            <li>
+              Isi kendi dengan hasil panen kering (mis. bawang, jagung) atau
+              sayuran yang ingin disimpan.
+            </li>
+            <li>
+              Tutup rapat, simpan di tempat teduh—jangan terkena sinar matahari
+              langsung.
+            </li>
+            <li>
+              Jika digunakan untuk konservasi air, isi kendi sebagian dan
+              biarkan menyerap ke tanah sekitar.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="galeri" style="margin-top: 18px">
+        <h2>Galeri</h2>
+        <div class="gallery">
+          <img
+            src="./kendi_dikebun.png"
+            alt="Kendi tanah liat diletakkan di kebun"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=800&q=60"
+            alt="Detail tekstur tanah liat"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=60"
+            alt="Contoh penggunaan kendi untuk menyimpan hasil panen"
+          />
+        </div>
+      </section>
+
+      <section id="kontak" style="margin-top: 26px">
+        <h2>Kontak & Kolaborasi</h2>
+        <div
+          class="card"
+          style="
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+          "
+        >
+          <div style="flex: 1; min-width: 240px">
+            <p class="muted">
+              Tertarik mencoba prototipe, bermitra untuk produksi, atau
+              melakukan uji lapangan? Isi form atau hubungi kami langsung.
+            </p>
+            <p style="margin-top: 12px">
+              <strong>Email:</strong> sekaraarininathania@gmail.com<br /><strong
+                >Telepon/WA:</strong
+              >
+              +62 82391986870
+            </p>
+          </div>
+          <form id="kontak-form" style="flex: 1; min-width: 260px">
+            <label class="muted"
+              >Nama<br /><input
+                id="input-nama"
+                required
+                style="
+                  width: 100%;
+                  padding: 8px;
+                  margin-top: 6px;
+                  border-radius: 8px;
+                  border: 1px solid #e6e6e6;
+                "
+                placeholder="Nama kamu"
+            /></label>
+            <label class="muted" style="display: block; margin-top: 10px"
+              >Email<br /><input
+                id="input-email"
+                type="email"
+                required
+                style="
+                  width: 100%;
+                  padding: 8px;
+                  margin-top: 6px;
+                  border-radius: 8px;
+                  border: 1px solid #e6e6e6;
+                "
+                placeholder="email@domain.com"
+            /></label>
+            <label class="muted" style="display: block; margin-top: 10px"
+              >Pesan (singkat)<br /><textarea
+                id="input-pesan"
+                required
+                style="
+                  width: 100%;
+                  padding: 8px;
+                  margin-top: 6px;
+                  border-radius: 8px;
+                  border: 1px solid #e6e6e6;
+                "
+                rows="3"
+                placeholder="Ingin trial, produksi, atau kolaborasi?"
+              ></textarea>
+            </label>
+            <div style="margin-top: 10px">
+              <button class="btn" type="submit">Kirim</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+          "
+        >
+          <div class="muted">
+            © "Kelompok 1" — Kendi Tanah Liat • Inovasi untuk Ketahanan Pangan
+          </div>
+          <div class="muted">Dibuat dengan keahliah para pengrajin</div>
+        </div>
+      </footer>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("kontak-form");
+        const nama = document.getElementById("input-nama");
+        const email = document.getElementById("input-email");
+        const pesan = document.getElementById("input-pesan");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          window.open(
+            `https://api.whatsapp.com/send/?phone=6282391986870&text=Haloo, mau tanya tanya nih %0A%0ANama: ${nama.value} %0AEmail: ${email.value}%0APesan:%0A${pesan.value}&type=phone_number&app_absent=0`,
+            "_blank"
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
